@@ -44,8 +44,6 @@ Connection conn;
                 Przystanek defaultPrzystanek = new Przystanek(Utils.rightPadding(fromNazwa_przystanku, ' ', 32), fromCzas);
                 System.out.println("check4");
                 output.add(defaultPrzystanek.nazwa+defaultPrzystanek.czas);
-
-//                rsNazwaPrzystanku.getString("nazwa_przystanku")
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
