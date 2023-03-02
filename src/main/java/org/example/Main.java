@@ -9,8 +9,14 @@ public class Main {
     app.selectAll();
     System.out.println(app.id);
     System.out.println(app.czas);
-        for (int i=1;i<25;i++){
-            System.out.println(app.outputNazwa_przystanku[i]);
+        for (int i = 0; i < app.output.size(); i++) {
+            System.out.println(app.output.get(i));
         }
+        for (String a :
+                app.output) {
+            System.out.println(a);
+        }
+//        System.out.println(app.output.get(2));
+
         }
     }
