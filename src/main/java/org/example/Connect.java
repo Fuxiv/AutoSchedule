@@ -27,7 +27,10 @@ Connection conn;
             Statement stmt  = conn.createStatement();
             ResultSet rsId  = stmt.executeQuery(getHighestId);
             id = rsId.getShort("id");
-
+//przy zapytaniu z sama nazwa przystanku dziala
+//przy zapytaniu z czasem i nazwa nie dziala
+//czas nie wyrzuca errora, przechodzi checkpointy
+//sam czas dziala
             for (int i = 1;i<=id;i++){
                 String queryNazwa_przystanku = "select nazwa_przystanku from kurs101 where id="+i;
                 String queryCzas = "select czas from kurs101 where id="+i;
