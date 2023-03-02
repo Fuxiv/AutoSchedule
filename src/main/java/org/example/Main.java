@@ -9,11 +9,7 @@ public class Main {
     app.selectAll();
     System.out.println(app.id);
     System.out.println(app.czas);
-        for (int i = 0; i < app.output.size(); i++) {
-            System.out.println(app.output.get(i));
-        }
-        for (String a :
-                app.output) {
+        for (Object a : app.output) {
             System.out.println(a);
         }
 //        System.out.println(app.output.get(2));

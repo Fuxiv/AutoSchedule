@@ -2,10 +2,19 @@ package org.example;
 
 public class Przystanek {
     String nazwa;
-    String czas;
-    Przystanek(String nazwa, String czas){
+    String arrivalCzas;
+    String actualArrivalCzas;
+    String arrivalDiffCzas;
+    String departureCzas;
+    String actualDepartureCzas;
+    String departureDiffCzas;
+    Przystanek(String nazwa, String arrivalCzas, String actualArrivalCzas, String arrivalDiffCzas, String departureCzas, String actualDepartureCzas, String departureDiffCzas){
     this.nazwa = nazwa;
-    this.czas = czas;
+    this.arrivalCzas = arrivalCzas;
+    this.actualArrivalCzas = actualArrivalCzas;
+    this.arrivalDiffCzas = arrivalDiffCzas;
+    this.departureCzas = departureCzas;
+    this.actualDepartureCzas = actualDepartureCzas;
+    this.departureDiffCzas = departureDiffCzas;
     }
-
 }
