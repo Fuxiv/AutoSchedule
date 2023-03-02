@@ -1,18 +1,10 @@
 package org.example;
 
-
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-public class Main {
-    public static void main(String[] args) {
-    Connect app = new Connect();
-    app.selectAll();
-    System.out.println(app.id);
-    System.out.println(app.czas);
-        for (Object a : app.output) {
-            System.out.println(a);
-        }
-//        System.out.println(app.output.get(2));
-
-        }
+public class Main{
+    public static void main(String[] args){
+        Connect app = new Connect();
+        app.getStopAndTime((short) 813, (short) 101);
+        System.out.println(app.id);
+        System.out.println(Utils.nazwaRozkladu((byte) 1, (byte) 2));
     }
+}

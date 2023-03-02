@@ -1,4 +1,14 @@
 package org.example;
 
-public class Writer {
+import java.io.File;
+
+public class Writer{
+//    Writer(String data){
+//        try {
+//            File rozklad = new File();
+//        } catch (Exception e){
+//            e.printStackTrace();
+//        }
+//    }
+
 }
