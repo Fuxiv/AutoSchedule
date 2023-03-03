@@ -11,8 +11,8 @@ public class Utils{
         return String.format("%" + (-L) + "s", input).replace(' ', ch);
     }
 
-    public static String nazwaRozkladu(byte d, byte m){
-        return d + "-" + m + "-" + Connect.linia + "-" + Connect.kurs;
+    public static String nazwaRozkladu(String d, String m, short linia, short kurs){
+        return d + "-" + m + "-" + linia + "-" + kurs;
 
     }
 }

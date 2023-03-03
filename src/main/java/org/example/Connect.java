@@ -51,15 +51,17 @@ public class Connect{
                 }
                 String actualDeparture = planned.substring(0, 6) + actualDepartureSeconds;
                 String actualDepartureDiff = "00:00:" + actualDepartureSeconds;
-                Przystanek defaultPrzystanek = new Przystanek(Utils.rightPadding(fromNazwa_przystanku, ' ', 32), Utils.rightPadding(planned, ' ', 10), Utils.rightPadding(actualArrival, ' ', 10), Utils.rightPadding(arrivalDiff, ' ', 10), Utils.rightPadding(planned, ' ', 10), Utils.rightPadding(actualDeparture, ' ', 10), actualDepartureDiff);
-                output.add(defaultPrzystanek.nazwa + defaultPrzystanek.arrivalCzas + defaultPrzystanek.actualArrivalCzas + defaultPrzystanek.arrivalDiffCzas + defaultPrzystanek.departureCzas + defaultPrzystanek.actualDepartureCzas + defaultPrzystanek.departureDiffCzas);
+                Przystanek defaultPrzystanek = new Przystanek(Utils.rightPadding("  " + fromNazwa_przystanku, ' ', 34), Utils.rightPadding(planned, ' ', 10), Utils.rightPadding(actualArrival, ' ', 10), Utils.rightPadding(arrivalDiff, ' ', 10), Utils.rightPadding(planned, ' ', 10), Utils.rightPadding(actualDeparture, ' ', 10), Utils.rightPadding(actualDepartureDiff, ' ', 10), "ok");
+                output.add(defaultPrzystanek.nazwa + defaultPrzystanek.arrivalCzas + defaultPrzystanek.actualArrivalCzas + defaultPrzystanek.arrivalDiffCzas + defaultPrzystanek.departureCzas + defaultPrzystanek.actualDepartureCzas + defaultPrzystanek.departureDiffCzas + defaultPrzystanek.status);
             }
             for(Object a : output){
                 System.out.println(a);
+//                Files.write(Paths.get("./beginning1.txt"), a.toString().getBytes());
             }
         } catch(Exception e){
             System.out.println(e.getMessage());
         }
     }
 }
+
 

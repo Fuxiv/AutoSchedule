@@ -1,10 +1,10 @@
 package org.example;
 
+import java.io.IOException;
+
 public class Main{
-    public static void main(String[] args){
-        Connect app = new Connect();
-        app.getStopAndTime((short) 813, (short) 101);
-        System.out.println(app.id);
-        System.out.println(Utils.nazwaRozkladu((byte) 1, (byte) 2));
+    public static void main(String[] args) throws IOException{
+        Writer aa = new Writer();
+        aa.write((short) 813, (short) 101);
     }
 }
