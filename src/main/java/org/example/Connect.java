@@ -20,11 +20,15 @@ public class Connect {
 
     ArrayList<String> output = new ArrayList<>();
 
-    public void getStopAndTime(short liniaNumber, short kursNumber) {
+    public void getStopAndTime(short liniaNumber, byte brygada) {
+        short[] iloscKursow = Utils.iloscKursow(liniaNumber,brygada);
+        System.out.println(iloscKursow[0]);
+        System.out.println(iloscKursow[1]);
+        short kursNumber = iloscKursow[1];
         try {
             Connection conn = this.connect();
             Statement stmt = conn.createStatement();
-            for (int j = 1; j <= 6; j++) {
+            for (int j = 1; j <= iloscKursow[0]; j++) {
                 ResultSet rsHId = stmt.executeQuery("select id from linia" + liniaNumber + " where k" + kursNumber + " is not null order by id desc limit 1");
                 int highestId = rsHId.getInt("id");
                 ResultSet rsLowestId = stmt.executeQuery("select id from linia" + liniaNumber + " where k" + kursNumber + " is not null");
@@ -55,9 +59,9 @@ public class Connect {
                     Przystanek defaultPrzystanek = new Przystanek(Utils.rightPadding("  " + fromNazwa_przystanku, ' ', 34), Utils.rightPadding(planned, ' ', 10), Utils.rightPadding(actualArrival, ' ', 10), Utils.rightPadding(arrivalDiff, ' ', 10), Utils.rightPadding(planned, ' ', 10), Utils.rightPadding(actualDeparture, ' ', 10), Utils.rightPadding(actualDepartureDiff, ' ', 10), "ok");
                     output.add(defaultPrzystanek.nazwa + defaultPrzystanek.arrivalCzas + defaultPrzystanek.actualArrivalCzas + defaultPrzystanek.arrivalDiffCzas + defaultPrzystanek.departureCzas + defaultPrzystanek.actualDepartureCzas + defaultPrzystanek.departureDiffCzas + defaultPrzystanek.status);
                 }
-//                    for(Object a : output){
-//                        System.out.println(a);
-//                    }
+                    for(Object a : output){
+                        System.out.println(a);
+                    }
                 Writer.write(liniaNumber, kursNumber, output);
                 output.clear();
                 kursNumber++;
